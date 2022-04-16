@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const usersRoutes = require('./routes/users');
 const cardsRoutes = require('./routes/cards');
 const { createUser, login } = require('./controllers/users');
@@ -14,6 +15,13 @@ const { PORT = 3000 } = process.env;
 const app = express();
 
 app.use(express.json());
+app.use(cors({
+  origin: [
+    'http://vmesto.nomoredomains.xyz',
+    'https://vmesto.nomoredomains.xyz',
+  ],
+  credentials: true,
+}));
 app.use(requestLogger);
 
 app.post('/signin', validations.log, login);
