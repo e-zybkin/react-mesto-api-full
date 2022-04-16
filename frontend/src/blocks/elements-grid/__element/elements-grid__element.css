@@ -1,0 +1,32 @@
+.elements-grid__element {
+  position: relative;
+  width: 100%;
+  min-height: 361px;
+  background-color:#FFFFFF;
+  border-radius: 10px;
+  overflow: hidden;
+  color:#000000;
+  display: grid;
+  grid-template-rows: 282px 79px;
+  grid-template-areas:
+    "picture"
+    "caption";
+}
+
+@media screen and (max-width: 1023px) {
+  .elements-grid__element {
+    grid-template-rows: 370px 85px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .elements-grid__element {
+    grid-template-rows: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .elements-grid__element {
+    grid-template-rows: 282px 79px;
+  }
+}

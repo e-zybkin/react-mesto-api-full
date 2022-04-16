@@ -1,0 +1,11 @@
+.auth-page__input {
+  width: 99%;
+  border: none;
+  border-bottom: 2px solid rgba(204, 204, 204, 1);
+  background-color: black;
+  color: rgba(204, 204, 204, 1);
+  font-size: 14px;
+  line-height: 17px;
+  margin: 0;
+  outline: none;
+}

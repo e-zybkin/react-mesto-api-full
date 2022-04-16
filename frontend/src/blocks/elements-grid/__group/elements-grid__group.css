@@ -1,0 +1,19 @@
+.elements-grid__group {
+  display: flex;
+  justify-content: space-between;
+  max-width: 246px;
+  min-height: 23px;
+  margin: 22px 15px 28px 21px;
+}
+
+@media screen and (max-width: 1023px) {
+  .elements-grid__group {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .elements-grid__group {
+    max-width: 246px;
+  }
+}

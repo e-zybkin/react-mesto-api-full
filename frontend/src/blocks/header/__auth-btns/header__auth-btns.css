@@ -1,0 +1,28 @@
+.header__auth-btns{
+  color: white;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: right;
+  margin: 35px 0 0 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .header__auth-btns {
+    margin: 28px 45px 0 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__auth-btns {
+    font-size: 16px;
+    margin: 24px 27px 0 0 ;
+  }
+}
+
+@media screen and (max-width: 319px) {
+  .header__auth-btns {
+    font-size: 14px;
+    line-height: 17px;
+    margin: 26px 30px 0 0;
+  }
+}

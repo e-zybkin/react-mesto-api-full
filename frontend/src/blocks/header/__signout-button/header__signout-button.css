@@ -1,0 +1,8 @@
+.header__signout-button {
+  color: white;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: right;
+  align-self: center;
+  /*margin: 35px 0 0 24px;*/
+}

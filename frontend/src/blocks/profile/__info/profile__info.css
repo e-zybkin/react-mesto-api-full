@@ -1,0 +1,27 @@
+.profile__info {
+  display: grid;
+  max-width: 336px;
+  min-height: 73px;
+  margin: 22px 0 25px 0;
+  grid-template-columns: 294px 24px;
+  grid-template-rows: 49px 18px;
+  grid-template-areas:
+    "name edit"
+    "about about";
+  column-gap: 18px;
+  row-gap: 6px;
+}
+
+@media screen and (max-width: 767px) {
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 282px;
+    min-height: 54px;
+    margin-bottom: 36px;
+    grid-template-columns: 189px 18px;
+    grid-template-rows: 26px 14px;
+    column-gap: 10px;
+    row-gap: 4px;
+  }
+}

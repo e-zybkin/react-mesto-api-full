@@ -1,0 +1,23 @@
+.header__user-info {
+  display: flex;
+  margin-top: 18px;
+}
+
+@media screen and (max-width: 1023px) {
+  .header__user-info {
+    margin-right: 45px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__user-info {
+    margin-top: 14px;
+    margin-right: 27px;
+  }
+}
+
+/*@media screen and (max-width: 700px) {
+  .header__user-info {
+
+  }
+}*/

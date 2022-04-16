@@ -1,0 +1,30 @@
+.elements-grid__delete-button {
+  position: absolute;
+  width: 18px;
+  height: 19px;
+  border: none;
+  background-color: rgb(0, 0, 0, 0);
+  background-image: url(../../../images/bucket.svg);
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  visibility: hidden;
+}
+
+
+@media screen and (max-width: 1023px) {
+  .elements-grid__delete-button {
+    width: 25px;
+    height: 26px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .elements-grid__delete-button {
+    width: 18px;
+    height: 19px;
+  }
+}
