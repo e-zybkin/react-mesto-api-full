@@ -15,6 +15,8 @@ const { PORT = 3000 } = process.env;
 
 const app = express();
 
+app.use(requestLogger);
+
 app.use(express.json());
 app.use(cors({
   origin: [
@@ -23,7 +25,6 @@ app.use(cors({
   ],
   credentials: true,
 }));
-app.use(requestLogger);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
