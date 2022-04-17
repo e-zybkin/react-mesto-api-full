@@ -44,7 +44,7 @@ function App() {
   React.useEffect(() => {
     api.getInitialCards()
       .then(result => {
-        setCards(result)
+        setCards(result.data)
       })
       .catch(error => {
         console.log('ОШИБКА: ', error)
