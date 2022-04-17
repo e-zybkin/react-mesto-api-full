@@ -32,17 +32,14 @@ function App() {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    //if(!loggedIn) {
-      //return
-    //}
     api.getUserData()
       .then(result => {
-        setCurrentUser(result.data); //вопрос с data
+        setCurrentUser(result.data);
       })
       .catch(error => {
         console.log('ОШИБКА: ', error)
       })
-  }, [])//loggedIn])
+  }, [])
 
   React.useEffect(() => {
     api.getInitialCards()
@@ -60,7 +57,7 @@ function App() {
       auth.getContent(jwt)
       .then((res) => {
         if(res){
-          setEmail(res.data.email) //вопрос с data
+          setEmail(res.data.email)
           setLoggedIn(true)
           navigate('/');
         }
@@ -128,7 +125,7 @@ function App() {
   function handleUpdateUser(formData) {
     api.setUserData(formData)
       .then(result => {
-        setCurrentUser(result.data); //вопрос с data
+        setCurrentUser(result.data);
         closeAllPopups();
       })
       .catch(error => {
@@ -139,7 +136,7 @@ function App() {
   function handleUpdateAvatar(formData) {
     api.setUserAvatar(formData)
       .then(result => {
-        setCurrentUser(result.data); //вопрос с data
+        setCurrentUser(result.data);
         closeAllPopups();
       })
       .catch(error => {
@@ -190,8 +187,8 @@ function App() {
 
   function signOut() {
     localStorage.removeItem('jwt');
-	  //setCurrentUser();
-	  //setLoggedIn(false);
+	  setCurrentUser();
+	  setLoggedIn(false);
     setEmail('');
   }
 
