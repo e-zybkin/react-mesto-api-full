@@ -32,9 +32,9 @@ function App() {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    if(!loggedIn) {
-      return
-    }
+    //if(!loggedIn) {
+      //return
+    //}
     api.getUserData()
       .then(result => {
         setCurrentUser(result.data); //вопрос с data
@@ -42,7 +42,7 @@ function App() {
       .catch(error => {
         console.log('ОШИБКА: ', error)
       })
-  }, [loggedIn])
+  }, [])//loggedIn])
 
   React.useEffect(() => {
     api.getInitialCards()
@@ -104,10 +104,10 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i === currentUser._id); //some
+    const isLiked = card.likes.some(i => i === currentUser._id);
     api.changeLikeCardStatus(card._id, !isLiked)
       .then((newCard) => {
-        setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+        setCards((state) => state.map((c) => c._id === card._id ? newCard.data : c));
       })
       .catch(error => {
         console.log('ОШИБКА: ', error);
@@ -190,8 +190,8 @@ function App() {
 
   function signOut() {
     localStorage.removeItem('jwt');
-	  setCurrentUser();
-	  setLoggedIn(false);
+	  //setCurrentUser();
+	  //setLoggedIn(false);
     setEmail('');
   }
 
