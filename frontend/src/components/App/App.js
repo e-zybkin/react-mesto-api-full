@@ -42,17 +42,14 @@ function App() {
       .catch(error => {
         console.log('ОШИБКА: ', error)
       })
-  }, [loggedIn])
-
-  React.useEffect(() => {
-    api.getInitialCards()
+	 api.getInitialCards()
       .then(result => {
         setCards(result.data)
       })
       .catch(error => {
         console.log('ОШИБКА: ', error)
       })
-  }, [])
+  }, [loggedIn])
 
   React.useEffect(() => {
     if(localStorage.getItem('jwt')){
