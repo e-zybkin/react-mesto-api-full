@@ -34,7 +34,7 @@ function App() {
   React.useEffect(() => {
     api.getUserData()
       .then(result => {
-        setCurrentUser(result);
+        setCurrentUser(result.data);
       })
       .catch(error => {
         console.log('ОШИБКА: ', error)
@@ -125,7 +125,7 @@ function App() {
   function handleUpdateUser(formData) {
     api.setUserData(formData)
       .then(result => {
-        setCurrentUser(result);
+        setCurrentUser(result.data);
         closeAllPopups();
       })
       .catch(error => {
@@ -136,7 +136,7 @@ function App() {
   function handleUpdateAvatar(formData) {
     api.setUserAvatar(formData)
       .then(result => {
-        setCurrentUser(result);
+        setCurrentUser(result.data);
         closeAllPopups();
       })
       .catch(error => {
@@ -147,7 +147,7 @@ function App() {
   function handleAddCard(formData) {
     api.setNewCard(formData)
       .then(result => {
-        setCards([result, ...cards]);
+        setCards([result.data, ...cards]);
         closeAllPopups();
       })
       .catch(error => {
