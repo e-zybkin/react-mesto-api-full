@@ -5,7 +5,7 @@ class Api {
   }
 
   getToken = () => {
-    return `Bearer ${localStorage.getItem('token')}`;
+    return `Bearer ${localStorage.getItem('jwt')}`;
   }
 
   _getResponseData(result) {
