@@ -7,4 +7,4 @@
 
 Домен - vmesto.nomoredomains.xyz
 
-Ссылка
+Ссылка - https://vmesto.nomoredomains.xyz/
