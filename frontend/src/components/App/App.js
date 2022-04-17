@@ -34,7 +34,7 @@ function App() {
   React.useEffect(() => {
     api.getUserData()
       .then(result => {
-        setCurrentUser(result.data);
+        setCurrentUser(result.data); //вопрос с data
       })
       .catch(error => {
         console.log('ОШИБКА: ', error)
@@ -57,7 +57,7 @@ function App() {
       auth.getContent(jwt)
       .then((res) => {
         if(res){
-          setEmail(res.data.email)
+          setEmail(res.data.email) //вопрос с data
           setLoggedIn(true)
           navigate('/');
         }
@@ -114,7 +114,7 @@ function App() {
   function handleCardDelete(card) {
     api.deleteCard(card)
       .then(result => {
-        setCards((state) => state.filter((c) => c.data._id !== card._id))
+        setCards((state) => state.filter((c) => c._id !== card._id))
         closeAllPopups();
       })
       .catch(error => {
@@ -125,7 +125,7 @@ function App() {
   function handleUpdateUser(formData) {
     api.setUserData(formData)
       .then(result => {
-        setCurrentUser(result.data);
+        setCurrentUser(result.data); //вопрос с data
         closeAllPopups();
       })
       .catch(error => {
@@ -136,7 +136,7 @@ function App() {
   function handleUpdateAvatar(formData) {
     api.setUserAvatar(formData)
       .then(result => {
-        setCurrentUser(result.data);
+        setCurrentUser(result.data); //вопрос с data
         closeAllPopups();
       })
       .catch(error => {
@@ -147,7 +147,7 @@ function App() {
   function handleAddCard(formData) {
     api.setNewCard(formData)
       .then(result => {
-        setCards([result.data, ...cards]);
+        setCards([result, ...cards]); //вопрос с data
         closeAllPopups();
       })
       .catch(error => {
