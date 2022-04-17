@@ -1,8 +1,11 @@
 
 class Api {
-  constructor({address, token}) {
+  constructor({address}) {
     this.address = address;
-    this.token = token
+  }
+
+  getToken = () => {
+    return `Bearer ${localStorage.getItem('token')}`;
   }
 
   _getResponseData(result) {
@@ -15,7 +18,7 @@ class Api {
   getInitialCards() {
     return fetch(`${this.address}/cards`, {
       headers: {
-        authorization: this.token
+        authorization: this.getToken(),
       },
     })
     .then(result => this._getResponseData(result))
@@ -24,7 +27,7 @@ class Api {
   getUserData() {
     return fetch(`${this.address}/users/me`, {
       headers: {
-        authorization: this.token
+        authorization: this.getToken(),
       }
     })
     .then(result => this._getResponseData(result))
@@ -34,7 +37,7 @@ class Api {
     return fetch(`${this.address}/cards`, {
       method: 'POST',
       headers: {
-        authorization: this.token,
+        authorization: this.getToken(),
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -49,7 +52,7 @@ class Api {
     return fetch(`${this.address}/users/me`, {
       method: 'PATCH',
       headers: {
-        authorization: this.token,
+        authorization: this.getToken(),
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -64,7 +67,7 @@ class Api {
     return fetch(`${this.address}/users/me/avatar`, {
       method: 'PATCH',
       headers: {
-        authorization: this.token,
+        authorization: this.getToken(),
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -79,7 +82,7 @@ class Api {
     return fetch(`${this.address}/cards/${cardId}/likes`, {
         method,
         headers: {
-          authorization: this.token
+          authorization: this.getToken(),
         }
     })
     .then(result => this._getResponseData(result))
@@ -89,7 +92,7 @@ class Api {
     return fetch(`${this.address}/cards/${data._id}`, {
       method: 'DELETE',
       headers: {
-        authorization: this.token
+        authorization: this.getToken(),
       }
     })
     .then(result => this._getResponseData(result))
