@@ -187,8 +187,6 @@ function App() {
 
   function signOut() {
     localStorage.removeItem('jwt');
-	  setCurrentUser();
-	  setLoggedIn(false);
     setEmail('');
   }
 
