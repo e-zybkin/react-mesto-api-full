@@ -193,6 +193,7 @@ function App() {
     setLoggedIn(false);
     setCurrentUser({});
     setEmail('');
+	 setCards([]);
     navigate('/sign-in');
   }
 
