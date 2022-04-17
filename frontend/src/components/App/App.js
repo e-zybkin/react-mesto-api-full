@@ -147,7 +147,7 @@ function App() {
   function handleAddCard(formData) {
     api.setNewCard(formData)
       .then(result => {
-        setCards([result, ...cards]); //вопрос с data
+        setCards([result, ...cards]);
         closeAllPopups();
       })
       .catch(error => {
