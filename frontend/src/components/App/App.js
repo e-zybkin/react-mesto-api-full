@@ -32,6 +32,9 @@ function App() {
   const navigate = useNavigate();
 
   React.useEffect(() => {
+    if(!loggedIn) {
+      return
+    }
     api.getUserData()
       .then(result => {
         setCurrentUser(result.data); //вопрос с data
@@ -39,7 +42,7 @@ function App() {
       .catch(error => {
         console.log('ОШИБКА: ', error)
       })
-  }, [])
+  }, [loggedIn])
 
   React.useEffect(() => {
     api.getInitialCards()
@@ -187,8 +190,8 @@ function App() {
 
   function signOut() {
     localStorage.removeItem('jwt');
-	 setCurrentUser({});
-	 setLoggedIn(false);
+	  setCurrentUser();
+	  setLoggedIn(false);
     setEmail('');
   }
 
